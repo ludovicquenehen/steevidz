@@ -1,6 +1,7 @@
 <template>
-  <div class="h-screen w-screen px-12 py-6">
-    <div class="sm:px-24 px-4">
+  <div>
+    <img src="/logo.webp" class="m-auto" />
+    <div class="px-6 py-6">
       <Nuxt />
     </div>
   </div>
