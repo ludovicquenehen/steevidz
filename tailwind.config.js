@@ -11,7 +11,10 @@ module.exports = {
     extend: {},
     colors: {
       primary: '#13AFFA',
-      secondary: ' #FFAF00',
+      secondary: '#FFAF00',
+      white: '#FFF',
+      black: '#000',
+      gray: '#C0C0C0'
     }
   },
   plugins: [],
