@@ -5,7 +5,7 @@
       shadow-md
       bg-primary
       rounded-full
-      h-12 md:w-1/12 w-full py-2 px-3
+      h-12 lg:w-1/6 w-full py-2 px-3
       enabled:hover:border-2 enabled:hover:border-secondary
       enabled:active:bg-secondary
       disabled:opacity-50

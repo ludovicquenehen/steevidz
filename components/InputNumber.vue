@@ -9,7 +9,7 @@
       shadow-md
       border-solid border-primary border
       rounded-full
-      h-12 md:w-1/12 w-full py-2 px-3
+      h-12 lg:w-1/12 w-full py-2 px-3
       hover:border-2
       focus:border-2 focus:outline-none
     "

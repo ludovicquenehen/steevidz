@@ -6,7 +6,7 @@
       <div class="bg-black bg-opacity-50 absolute px-6 py-2 top-0 left-0 text-white">
         <span>{{ value.vote_average.toFixed(1) }}/10 ({{ value.vote_count }} votes)</span>
       </div>
-      <div class="bg-black bg-opacity-50 absolute px-6 py-2 bottom-0 left-0 text-white h-1/2 space-y-2">
+      <div class="bg-black bg-opacity-50 absolute px-6 py-2 bottom-0 left-0 text-white h-1/2 max-w-[500px] space-y-2">
         <span class="text-xl">{{ value.title }} ({{ value.release_year }})</span>
         <span class="overview">{{ value.overview }}</span>
         <div class="text-sm space-x-1 flex flex-wrap">

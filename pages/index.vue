@@ -1,9 +1,13 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex justify-center sm:flex-row flex-col sm:space-x-4 space-x-0 sm:space-y-0 space-y-4 sm:px-24 px-4">
+    <div :class="
+      [
+        'flex justify-center lg:flex-row flex-col lg:space-x-4 space-x-0 lg:space-y-0 space-y-4 lg:px-24 px-4',
+        { 'lg:mt-32 mt-8': !searched }
+      ]">
       <SearchBar
         v-model="query"
-        placeholder="Rechercher un film"
+        placeholder="Rechercher un film par titre"
         @keyup.enter.native="search"
       />
       <InputNumber
@@ -19,7 +23,7 @@
     </div>
     <Loader v-if="loading" class="mx-auto mt-6" />
     <template v-else>
-      <div v-if="movies.length > 0" class="mt-6 grid sm:grid-cols-5 grid-cols-1 gap-4">
+      <div v-if="movies.length > 0" class="mt-6 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4 m-auto">
         <MovieCard v-for="movie in movies" :key="movie.id" :value="movie" />
       </div>
       <Pagination v-if="movies.length > 0 && nbPages > 1 && !loading" v-model="page" :nb-pages="nbPages" class="mx-auto mt-6" @change="search(false)" />
@@ -73,14 +77,14 @@ export default class HomePage extends Vue {
     const { results, total_pages  } = await searchMovie(this.query, this.page, this.year)
     this.movies = results.map((e: Movie) => ({
       ...e,
-      genre_names: e.genre_ids.map((i: number) => this.genres.find((g: Genre) => g.id === i)?.name),
+      genre_names: e.genre_ids.map((i: number) => this.genres.find((g: Genre) => g.id === i)?.name || '').filter(Boolean),
       release_year: new Date(e.release_date).getFullYear()
     }))
     this.nbPages = total_pages
-    this.searched = true
     
     // On simule un temps d'attente sinon le spinner n'est pas visible
     setTimeout(() => {
+      this.searched = true
       this.loading = false
     }, 1000)
   }
