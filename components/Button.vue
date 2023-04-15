@@ -21,7 +21,7 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class SearchBar extends Vue {
+export default class Button extends Vue {
   @Prop({ type: String, required: true })
   text: string
 
