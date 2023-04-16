@@ -23,11 +23,11 @@
     </div>
     <Loader v-if="loading" class="mx-auto mt-6" />
     <template v-else>
-      <div v-if="movies.length > 0" class="mt-6 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4 m-auto">
+      <div v-if="movies.length > 0" class="mt-6 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4 mx-auto">
         <MovieCard v-for="movie in movies" :key="movie.id" :value="movie" />
       </div>
-      <Pagination v-if="movies.length > 0 && nbPages > 1 && !loading" v-model="page" :nb-pages="nbPages" class="mx-auto mt-6" @change="search(false)" />
-      <div v-if="searched && movies.length === 0 && !loading" class="mt-8 text-primary text-xl m-auto">
+      <Pagination v-if="movies.length > 0 && nbPages > 1" v-model="page" :nb-pages="nbPages" class="mx-auto mt-6" @change="search(false)" />
+      <div v-if="searched && movies.length === 0" class="mt-8 text-primary text-xl m-auto">
         Acucun résultat pour votre recherche
       </div>
     </template>

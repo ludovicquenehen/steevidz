@@ -3,7 +3,7 @@
     :disabled="disabled"
     class="
       shadow-md
-      bg-primary
+      bg-primary text-white
       rounded-full
       h-12 lg:w-1/6 w-full py-2 px-3
       enabled:hover:border-2 enabled:hover:border-secondary
