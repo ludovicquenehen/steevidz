@@ -3,14 +3,11 @@
     v-model="value"
     type="text"
     :placeholder="placeholder"
-    class="
-      shadow-md
-      border-solid border-primary border
-      rounded-full
-      h-12 lg:w-1/3 w-full py-2 px-3
-      hover:border-2
-      focus:border-2 focus:outline-none
-    "
+    :class="[
+      'shadow-md border-solid border-primary border rounded-full h-12 py-2 px-3 hover:border-2 focus:border-2 focus:outline-none',
+      size
+    ]"
+    v-bind="$attrs"
     @input="$emit('input', value)"
   />
 </template>
@@ -19,9 +16,12 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class SearchBar extends Vue {
+export default class InputNumber extends Vue {
   @Prop({ type: String, required: true })
   placeholder: string
+
+  @Prop({ type: String, default: '' })
+  size: string
 
   public value: string = ''
 }

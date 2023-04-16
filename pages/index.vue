@@ -5,14 +5,18 @@
         'flex justify-center lg:flex-row flex-col lg:space-x-4 space-x-0 lg:space-y-0 space-y-4 lg:px-24 px-4',
         { 'lg:mt-32 mt-8': !searched }
       ]">
-      <SearchBar
+      <Input
         v-model="query"
         placeholder="Rechercher un film par titre"
+        size="lg:w-1/3 w-full"
         @keyup.enter.native="search"
       />
-      <InputNumber
+      <Input
         v-model="year"
         placeholder="Année"
+        inputmode="numeric"
+        v-mask="'DDDD'"
+        size="lg:w-1/12 w-full"
         @keyup.enter.native=" search"
       />
       <Button
@@ -36,8 +40,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import SearchBar from '@/components/SearchBar.vue'
-import InputNumber from '~/components/InputNumber.vue'
+import Input from '@/components/Input.vue'
 import Button from '@/components/Button.vue'
 import MovieCard from '@/components/MovieCard.vue'
 import Pagination from '@/components/Pagination.vue'
@@ -48,8 +51,7 @@ import { Movie, Genre } from '~/types/TMDB.type.js'
 
 @Component({
   components: {
-    SearchBar,
-    InputNumber,
+    Input,
     Button,
     MovieCard,
     Pagination,
