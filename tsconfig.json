@@ -27,8 +27,7 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node",
-      "v-mask"
+      "@types/node"
     ]
   },
   "exclude": [
