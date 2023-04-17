@@ -30,7 +30,7 @@ Copy as follow in a `.env` file
 ```
 TMDB_URL=https://api.themoviedb.org/3/
 TMDB_IMG_BASE_PATH=https://image.tmdb.org/t/p/
-TMDB_API_KEY=0128b6439a2d34e79eef7fdbed3045ea
+TMDB_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWUxNjFjM2Q2YTczYzFiYWRmNjRiODAxN2RkODBlNCIsInN1YiI6IjYyZjIyNzIwMTUxMWFhMDA3ZDQyODRjMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KLXn1jHj49w417T36NxE0NENwVQ3Htaqz-5awc_NnkI
 ```
 
 ## Must have

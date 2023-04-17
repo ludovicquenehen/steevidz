@@ -2,14 +2,20 @@ import axios from 'axios'
 import { Result } from '~/types/TMDB.type'
 
 const baseUrl = process.env.TMDB_URL
-const apiKey = process.env.TMDB_API_KEY
+const token = process.env.TMDB_TOKEN
+
+const headers = {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+}
 
 export const searchMovie = async (query: string, page: number = 1, year?: string): Promise<Result> => {
-  return (await axios.get(`${baseUrl}search/movie?api_key=${apiKey}&query=${encodeURIComponent(query)}${year ? ('&year=' + year) : ''}&page=${page}&language=fr`))?.data
+  return (await axios.get(`${baseUrl}search/movie?&query=${encodeURIComponent(query)}${year ? ('&year=' + year) : ''}&page=${page}&language=fr`, { ...headers }))?.data
 }
 
 export const getGenres = async () => {
-  return (await axios.get(`${baseUrl}genre/movie/list?api_key=${apiKey}`))?.data.genres
+  return (await axios.get(`${baseUrl}genre/movie/list`, { ...headers }))?.data.genres
 }
 
 export const posterPath = `${process.env.TMDB_IMG_BASE_PATH}w300`
